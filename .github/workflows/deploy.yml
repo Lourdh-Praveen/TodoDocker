@@ -1,0 +1,20 @@
+name: Deploy              # name of your workflow (your choice)
+
+on:
+  push:
+    branches:
+      - main              # run this when you push to main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # use GitHub's ubuntu server to run
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # get your code from GitHub
+
+      - name: Build Docker image
+        run: docker build -t my-todo .  # build the image
+
+      - name: Run Docker container
+        run: docker run -d -p 3000:80 my-todo  # start container
