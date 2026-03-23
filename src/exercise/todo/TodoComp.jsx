@@ -14,7 +14,7 @@ function Todocomp(){
   
     return(
         <>
-        <div>todo list</div>
+        <div>TODO list</div>
         <label>Enter the task</label>
         <input type="text"  value={input} onChange={(e)=>setInput(e.target.value)}/>
         <button onClick={addList}>ADD task </button>
